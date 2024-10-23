@@ -1,4 +1,4 @@
-# Clone Eval Protocol
+# Voice Cloning Evaluation Protocol
 
 ## Instructions for Running the Evaluation Script
 
