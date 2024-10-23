@@ -10,7 +10,7 @@
 
 4. **If you want the evaluation protocol to consider emotions, save the .wav files in the format "..._emotion.wav".**
 
-5. **If you run the script without arguments, it will evaluate a sample dataset by default.**
+5. **If you run the script without any arguments, it will, by default, evaluate a sample dataset located in the 'example' folder.**
 
 6. **Arguments:**
    - **emotion_list**: A list of emotions in your dataset.

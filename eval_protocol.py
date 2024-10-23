@@ -30,15 +30,15 @@ logger = logging.getLogger(__name__)
 class EvalConfig:
     emotion_list: List[str] = field(
         default_factory=list,
-        metadata={'help': ''},
+        metadata={'help': 'A list of emotions in your dataset'},
     )
     original_dir: str = field(
         default='example/original_samples',
-        metadata={'help': ''},
+        metadata={'help': 'The path to the folder with original samples'},
     )
     cloned_dir: str = field(
         default='example/cloned_samples',
-        metadata={'help': ''},
+        metadata={'help': 'The path to the folder with cloned samples'},
     )
 
 def parse_eval_args() -> EvalConfig:
