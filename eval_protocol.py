@@ -2,6 +2,8 @@ import csv
 import os 
 import sys
 import logging
+import pandas as pd
+from typing import List
 
 from librosa import load
 
@@ -13,10 +15,12 @@ from typing import Optional, List, Dict, Tuple
 from transformers import HfArgumentParser
 from sklearn.metrics.pairwise import cosine_distances
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from etb import WavLM, WavLMConfig
-from correlation_audio_features.librosa_wrapper import LibrosaWrapper
+from librosa_wrapper import LibrosaWrapper
+
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 logger = logging.getLogger(__name__)
@@ -24,12 +28,16 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class EvalConfig:
+    emotion_list: List[str] = field(
+        default_factory=list,
+        metadata={'help': ''},
+    )
     original_dir: str = field(
-        default='../example/original_samples',
+        default='example/original_samples',
         metadata={'help': ''},
     )
     cloned_dir: str = field(
-        default='../example/cloned_samples',
+        default='example/cloned_samples',
         metadata={'help': ''},
     )
 
@@ -58,6 +66,63 @@ def parse_eval_args() -> EvalConfig:
     return args
 
 
+def data_aggregation(emotion_list):
+    data = pd.read_csv('logs.csv')
+    #emotion_list = ['anger', 'disgust', 'fear', 'happiness', 'neutral', 'sadness']
+    result_df_list = {}
+    result_df_list['all'] = {}
+    error_file_name_v1 = ''
+    error_file_name_v2 = ''
+
+    for index, sample in data.iterrows():
+        if emotion_list == []:
+            emotion = None
+        else:
+            try:
+                emotion = sample['filename'].split('_')[1][:-4]
+            except:
+                if sample['filename'] != error_file_name_v1:
+                    print(f"invalid file name: {sample['filename']}, should be: ..._emotion.wav")
+                    error_file_name_v1 = sample['filename']
+
+                emotion = None
+        
+
+        if emotion in emotion_list:
+            if emotion not in result_df_list.keys():
+                result_df_list[emotion] = {}
+            if sample['feature'] not in result_df_list[emotion].keys():
+                result_df_list[emotion][sample['feature']] = []
+            result_df_list[emotion][sample['feature']].append(sample['cosine_distance'])
+        elif emotion_list != []:
+            if sample['filename'] != error_file_name_v2:
+                print(f"invalid emotion name in file: {sample['filename']}, should be: {emotion_list}")
+                error_file_name_v2 = sample['filename']
+
+        if sample['feature'] not in result_df_list['all'].keys():
+            result_df_list['all'][sample['feature']] = []    
+        result_df_list['all'][sample['feature']].append(sample['cosine_distance'])
+
+
+    for emotion in result_df_list.keys():
+        for feature in result_df_list[emotion].keys():
+            result_df_list[emotion][feature] = np.mean(result_df_list[emotion][feature])
+
+        #result_df_list[e]['model'] = f'{model_name}'
+        #result_df_list[e]['dataset'] = f'{dataset_name}'
+        result_df_list[emotion]['emotion'] = f'{emotion}'
+
+    df = pd.DataFrame(columns=result_df_list['all'].keys())
+    for emotion in result_df_list.keys():
+        df_helper = pd.DataFrame([result_df_list[emotion]])
+
+        df = pd.concat([df, df_helper], ignore_index=True)
+    
+    df.to_csv('results.csv', index=False)
+    print()
+    print(df)
+
+
 def main():
     args = parse_eval_args()
 
@@ -67,13 +132,13 @@ def main():
     # filenames = os.listdir(args.original_dir) # In the case of an error during cloning, cloned samples may be missing
     filenames = os.listdir(args.cloned_dir)
 
-    checkpoint = torch.load('../WavLM-Large.pt')
+    checkpoint = torch.load('WavLM-Large.pt')
     cfg = WavLMConfig(checkpoint['cfg'])
     model = WavLM(cfg).to(device)
     model.load_state_dict(checkpoint['model'])
     model.eval()
 
-    with open('./results.csv', 'w') as fp:
+    with open('./logs.csv', 'w') as fp:
         fp.write('filename,feature,cosine_distance\n')
 
     for filename in filenames:
@@ -101,11 +166,11 @@ def main():
             if f_orig.ndim < 2: f_orig = f_orig.reshape(1, -1)
             if f_clon.ndim < 2: f_clon = f_clon.reshape(1, -1)
             val = np.mean(cosine_distances(f_orig, f_clon))
-            with open('./results.csv', 'a') as fp:
+            with open('./logs.csv', 'a') as fp:
                 fp.write(f'{filename},{feature},{val}\n')
             all_values.append(val)
         
-        with open('./results.csv', 'a') as fp:
+        with open('./logs.csv', 'a') as fp:
             fp.write(f'{filename},mean,{np.mean(all_values)}\n')
             fp.write(f'{filename},std,{np.std(all_values)}\n')
             fp.write(f'{filename},min,{np.min(all_values)}\n')
@@ -120,8 +185,14 @@ def main():
         orig_rep = orig_rep.squeeze(0).detach().cpu().numpy()
         clon_rep, _ = model.extract_features(x_clon, output_layer=model.cfg.encoder_layers, ret_layer_results=True)[0]
         clon_rep = clon_rep.squeeze(0).detach().cpu().numpy()
-        with open('./results.csv', 'a') as fp:
+        with open('./logs.csv', 'a') as fp:
             fp.write(f'{filename},wavlm,{np.mean(cosine_distances(orig_rep, clon_rep))}\n')
+
+    data_aggregation(args.emotion_list)
+
+
+
+        
 
 
 if __name__ == '__main__':
