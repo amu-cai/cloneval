@@ -13,6 +13,6 @@
 5. **If you run the script without any arguments, it will, by default, evaluate a sample dataset located in the 'example' folder.**
 
 6. **Arguments:**
-   - **emotion_list**: A list of emotions in your dataset.
+   - **emotion_list**: A list of emotions in your dataset. If not provided, evaluation ignores emotions.
    - **original_dir**: The path to the folder with original samples.
    - **cloned_dir**: The path to the folder with cloned samples.
