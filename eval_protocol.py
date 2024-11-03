@@ -79,7 +79,7 @@ def data_aggregation(emotion_list):
             emotion = None
         else:
             try:
-                emotion = sample['filename'].split('_')[1][:-4]
+                emotion = sample['filename'].split('_')[-1][:-4]
             except:
                 if sample['filename'] != error_file_name_v1:
                     print(f"invalid file name: {sample['filename']}, should be: ..._emotion.wav")
