@@ -8,8 +8,7 @@ from typing import Optional
 
 from sklearn.metrics.pairwise import cosine_similarity
 
-from .librosa_wrapper import LibrosaWrapper
-from .wavlm import WavLM, WavLMConfig
+from . import LibrosaWrapper, WavLM, WavLMConfig
 
 
 SAMPLING_RATE = 16_000
@@ -81,7 +80,7 @@ class ClonEval:
 
         return results
 
-    def __call__(self, orig_dir: str, clon_dir: str, use_emotion: bool = False) -> None:
+    def evaluate(self, orig_dir: str, clon_dir: str, use_emotion: bool = False) -> None:
         filenames = os.listdir(orig_dir)
         results = Dataset.from_dict({"filename": filenames})
         if use_emotion:
