@@ -1,0 +1,361 @@
+file_id_sample_to_clone,file_id_sample_to_compare,text
+DC_a01,DC_a03,A boring novel is a superb sleeping pill.
+DC_a02,DC_a07,Cory and Trish played tag with beach balls for hours.
+DC_a03,DC_a03,A boring novel is a superb sleeping pill.
+DC_a04,DC_a05,The same shelter could be built into an embankment or below ground level.
+DC_a05,DC_a05,"If Carol comes tomorrow, have her arrange for a meeting at two."
+DC_a06,DC_a12,The same shelter could be built into an embankment or below ground level.
+DC_a07,DC_a07,Call an ambulance for medical assistance.
+DC_a08,DC_a10,Special task forces rescue hostages from kidnappers.
+DC_a09,DC_a14,The fish began to leap frantically on the surface of the small lake.
+DC_a10,DC_a10,Special task forces rescue hostages from kidnappers.
+DC_a11,DC_a11,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_a12,DC_a12,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_a13,DC_a14,She had your dark suit in greasy wash water all year.
+DC_a14,DC_a14,"If Carol comes tomorrow, have her arrange for a meeting at two."
+DC_a15,DC_a15,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_d01,DC_d12,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_d02,DC_d06,Cory and Trish played tag with beach balls for hours.
+DC_d03,DC_d12,A boring novel is a superb sleeping pill.
+DC_d04,DC_d04,Don't ask me to carry an oily rag like that.
+DC_d05,DC_d05,Call an ambulance for medical assistance.
+DC_d06,DC_d06,The same shelter could be built into an embankment or below ground level.
+DC_d07,DC_d07,Jeff thought you argued in favor of a centrifuge purchase.
+DC_d08,DC_d08,Was she just naturally sloppy about everything but her physical appearance?
+DC_d09,DC_d09,Call an ambulance for medical assistance.
+DC_d10,DC_d15,The easygoing zoologist relaxed throughout the voyage.
+DC_d11,DC_d15,She had your dark suit in greasy wash water all year.
+DC_d12,DC_d12,Each untimely income loss coincided with the breakdown of a heating system part.
+DC_d13,DC_d15,We saw eight tiny icicles below our roof.
+DC_d14,DC_d14,She had your dark suit in greasy wash water all year.
+DC_d15,DC_d15,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_f01,DC_f06,Kindergarten children decorate their classrooms for all holidays.
+DC_f02,DC_f02,Is a relaxed home atmosphere enough to help her outgrow these traits?
+DC_f03,DC_f06,Don't ask me to carry an oily rag like that.
+DC_f04,DC_f04,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_f05,DC_f05,A boring novel is a superb sleeping pill.
+DC_f06,DC_f06,Cory and Trish played tag with beach balls for hours.
+DC_f07,DC_f07,She had your dark suit in greasy wash water all year.
+DC_f08,DC_f08,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_f09,DC_f09,The easygoing zoologist relaxed throughout the voyage.
+DC_f10,DC_f10,She had your dark suit in greasy wash water all year.
+DC_f11,DC_f15,She had your dark suit in greasy wash water all year.
+DC_f12,DC_f15,Kindergarten children decorate their classrooms for all holidays.
+DC_f13,DC_f13,Each untimely income loss coincided with the breakdown of a heating system part.
+DC_f14,DC_f14,"If Carol comes tomorrow, have her arrange for a meeting at two."
+DC_f15,DC_f15,A boring novel is a superb sleeping pill.
+DC_h01,DC_h03,Don't ask me to carry an oily rag like that.
+DC_h02,DC_h02,The fish began to leap frantically on the surface of the small lake.
+DC_h03,DC_h03,Don't ask me to carry an oily rag like that.
+DC_h04,DC_h09,Jeff thought you argued in favor of a centrifuge purchase.
+DC_h05,DC_h13,The sermon emphasized the need for affirmative action.
+DC_h06,DC_h06,Jeff thought you argued in favor of a centrifuge purchase.
+DC_h07,DC_h07,The frightened child was gently subdued by his big brother.
+DC_h08,DC_h08,How much will it cost to do any necessary modernizing and redecorating?
+DC_h09,DC_h09,Each untimely income loss coincided with the breakdown of a heating system part.
+DC_h10,DC_h10,She had your dark suit in greasy wash water all year.
+DC_h11,DC_h11,Special task forces rescue hostages from kidnappers.
+DC_h12,DC_h12,Each untimely income loss coincided with the breakdown of a heating system part.
+DC_h13,DC_h13,The sermon emphasized the need for affirmative action.
+DC_h14,DC_h14,She had your dark suit in greasy wash water all year.
+DC_h15,DC_h15,Don't ask me to carry an oily rag like that.
+DC_n01,DC_n18,The easygoing zoologist relaxed throughout the voyage.
+DC_n02,DC_n17,Each untimely income loss coincided with the breakdown of a heating system part.
+DC_n03,DC_n18,Special task forces rescue hostages from kidnappers.
+DC_n04,DC_n15,Kindergarten children decorate their classrooms for all holidays.
+DC_n05,DC_n05,The frightened child was gently subdued by his big brother.
+DC_n06,DC_n06,Kindergarten children decorate their classrooms for all holidays.
+DC_n07,DC_n24,The frightened child was gently subdued by his big brother.
+DC_n08,DC_n08,A boring novel is a superb sleeping pill.
+DC_n09,DC_n22,Call an ambulance for medical assistance.
+DC_n10,DC_n10,Each untimely income loss coincided with the breakdown of a heating system part.
+DC_n11,DC_n11,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_n12,DC_n12,The sermon emphasized the need for affirmative action.
+DC_n13,DC_n18,The easygoing zoologist relaxed throughout the voyage.
+DC_n14,DC_n30,She had your dark suit in greasy wash water all year.
+DC_n15,DC_n15,"If Carol comes tomorrow, have her arrange for a meeting at two."
+DC_n16,DC_n18,The frightened child was gently subdued by his big brother.
+DC_n17,DC_n17,How much will it cost to do any necessary modernizing and redecorating?
+DC_n18,DC_n18,Jeff thought you argued in favor of a centrifuge purchase.
+DC_n19,DC_n29,Call an ambulance for medical assistance.
+DC_n20,DC_n29,Cory and Trish played tag with beach balls for hours.
+DC_n21,DC_n24,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_n22,DC_n22,Jeff thought you argued in favor of a centrifuge purchase.
+DC_n23,DC_n23,The frightened child was gently subdued by his big brother.
+DC_n24,DC_n24,Each untimely income loss coincided with the breakdown of a heating system part.
+DC_n25,DC_n29,Jeff thought you argued in favor of a centrifuge purchase.
+DC_n26,DC_n30,Is a relaxed home atmosphere enough to help her outgrow these traits?
+DC_n27,DC_n30,Cory and Trish played tag with beach balls for hours.
+DC_n28,DC_n30,We saw eight tiny icicles below our roof.
+DC_n29,DC_n29,The same shelter could be built into an embankment or below ground level.
+DC_n30,DC_n30,The frightened child was gently subdued by his big brother.
+DC_sa01,DC_sa03,How much will it cost to do any necessary modernizing and redecorating?
+DC_sa02,DC_sa02,The easygoing zoologist relaxed throughout the voyage.
+DC_sa03,DC_sa03,Jeff thought you argued in favor of a centrifuge purchase.
+DC_sa04,DC_sa15,She had your dark suit in greasy wash water all year.
+DC_sa05,DC_sa05,The frightened child was gently subdued by his big brother.
+DC_sa06,DC_sa08,She had your dark suit in greasy wash water all year.
+DC_sa07,DC_sa08,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_sa08,DC_sa08,Was she just naturally sloppy about everything but her physical appearance?
+DC_sa09,DC_sa09,She had your dark suit in greasy wash water all year.
+DC_sa10,DC_sa14,The same shelter could be built into an embankment or below ground level.
+DC_sa11,DC_sa15,Call an ambulance for medical assistance.
+DC_sa12,DC_sa12,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_sa13,DC_sa14,Jeff thought you argued in favor of a centrifuge purchase.
+DC_sa14,DC_sa14,She had your dark suit in greasy wash water all year.
+DC_sa15,DC_sa15,She had your dark suit in greasy wash water all year.
+DC_su01,DC_su03,We saw eight tiny icicles below our roof.
+DC_su02,DC_su02,Is a relaxed home atmosphere enough to help her outgrow these traits?
+DC_su03,DC_su03,Don't ask me to carry an oily rag like that.
+DC_su04,DC_su04,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_su05,DC_su12,Special task forces rescue hostages from kidnappers.
+DC_su06,DC_su06,She had your dark suit in greasy wash water all year.
+DC_su07,DC_su07,Each untimely income loss coincided with the breakdown of a heating system part.
+DC_su08,DC_su12,Call an ambulance for medical assistance.
+DC_su09,DC_su09,The sermon emphasized the need for affirmative action.
+DC_su10,DC_su10,The tooth fairy forgot to come when Roger's tooth fell out.
+DC_su11,DC_su11,Jeff thought you argued in favor of a centrifuge purchase.
+DC_su12,DC_su12,Don't ask me to carry an oily rag like that.
+DC_su13,DC_su14,Jeff thought you argued in favor of a centrifuge purchase.
+DC_su14,DC_su14,Cory and Trish played tag with beach balls for hours.
+DC_su15,DC_su15,Don't ask me to carry an oily rag like that.
+JK_a01,JK_a03,Special task forces rescue hostages from kidnappers.
+JK_a02,JK_a07,The frightened child was gently subdued by his big brother.
+JK_a03,JK_a03,Kindergarten children decorate their classrooms for all holidays.
+JK_a04,JK_a05,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_a05,JK_a05,The same shelter could be built into an embankment or below ground level.
+JK_a06,JK_a12,Don't ask me to carry an oily rag like that.
+JK_a07,JK_a07,Call an ambulance for medical assistance.
+JK_a08,JK_a08,The frightened child was gently subdued by his big brother.
+JK_a09,JK_a14,Jeff thought you argued in favor of a centrifuge purchase.
+JK_a10,JK_a10,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_a11,JK_a11,Kindergarten children decorate their classrooms for all holidays.
+JK_a12,JK_a12,Call an ambulance for medical assistance.
+JK_a13,JK_a14,The frightened child was gently subdued by his big brother.
+JK_a14,JK_a14,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_a15,JK_a15,Don't ask me to carry an oily rag like that.
+JK_d01,JK_d03,Special task forces rescue hostages from kidnappers.
+JK_d02,JK_d06,The fish began to leap frantically on the surface of the small lake.
+JK_d03,JK_d03,Don't ask me to carry an oily rag like that.
+JK_d04,JK_d04,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_d05,JK_d05,Each untimely income loss coincided with the breakdown of a heating system part.
+JK_d06,JK_d06,She had your dark suit in greasy wash water all year.
+JK_d07,JK_d12,Was she just naturally sloppy about everything but her physical appearance?
+JK_d08,JK_d08,How much will it cost to do any necessary modernizing and redecorating?
+JK_d09,JK_d09,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_d10,JK_d15,We saw eight tiny icicles below our roof.
+JK_d11,JK_d15,Don't ask me to carry an oily rag like that.
+JK_d12,JK_d12,The frightened child was gently subdued by his big brother.
+JK_d13,JK_d15,The fish began to leap frantically on the surface of the small lake.
+JK_d14,JK_d14,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_d15,JK_d15,We saw eight tiny icicles below our roof.
+JK_f01,JK_f06,Jeff thought you argued in favor of a centrifuge purchase.
+JK_f02,JK_f02,We saw eight tiny icicles below our roof.
+JK_f03,JK_f06,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_f04,JK_f04,Kindergarten children decorate their classrooms for all holidays.
+JK_f05,JK_f05,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_f06,JK_f06,Kindergarten children decorate their classrooms for all holidays.
+JK_f07,JK_f07,Special task forces rescue hostages from kidnappers.
+JK_f08,JK_f08,The fish began to leap frantically on the surface of the small lake.
+JK_f09,JK_f09,"If Carol comes tomorrow, have her arrange for a meeting at two."
+JK_f10,JK_f10,"If Carol comes tomorrow, have her arrange for a meeting at two."
+JK_f11,JK_f15,Was she just naturally sloppy about everything but her physical appearance?
+JK_f12,JK_f15,Kindergarten children decorate their classrooms for all holidays.
+JK_f13,JK_f13,We saw eight tiny icicles below our roof.
+JK_f14,JK_f14,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_f15,JK_f15,The sermon emphasized the need for affirmative action.
+JK_h01,JK_h03,The easygoing zoologist relaxed throughout the voyage.
+JK_h02,JK_h02,Each untimely income loss coincided with the breakdown of a heating system part.
+JK_h03,JK_h03,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_h04,JK_h09,How much will it cost to do any necessary modernizing and redecorating?
+JK_h05,JK_h15,How much will it cost to do any necessary modernizing and redecorating?
+JK_h06,JK_h06,Was she just naturally sloppy about everything but her physical appearance?
+JK_h07,JK_h07,A boring novel is a superb sleeping pill.
+JK_h08,JK_h08,Cory and Trish played tag with beach balls for hours.
+JK_h09,JK_h09,How much will it cost to do any necessary modernizing and redecorating?
+JK_h10,JK_h10,"If Carol comes tomorrow, have her arrange for a meeting at two."
+JK_h11,JK_h14,She had your dark suit in greasy wash water all year.
+JK_h12,JK_h12,The fish began to leap frantically on the surface of the small lake.
+JK_h13,JK_h13,"If Carol comes tomorrow, have her arrange for a meeting at two."
+JK_h14,JK_h14,Cory and Trish played tag with beach balls for hours.
+JK_h15,JK_h15,Don't ask me to carry an oily rag like that.
+JK_n01,JK_n18,Don't ask me to carry an oily rag like that.
+JK_n02,JK_n17,The sermon emphasized the need for affirmative action.
+JK_n03,JK_n18,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_n04,JK_n28,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_n05,JK_n05,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_n06,JK_n22,"If Carol comes tomorrow, have her arrange for a meeting at two."
+JK_n07,JK_n18,How much will it cost to do any necessary modernizing and redecorating?
+JK_n08,JK_n08,Was she just naturally sloppy about everything but her physical appearance?
+JK_n09,JK_n09,Jeff thought you argued in favor of a centrifuge purchase.
+JK_n10,JK_n10,The easygoing zoologist relaxed throughout the voyage.
+JK_n11,JK_n11,Was she just naturally sloppy about everything but her physical appearance?
+JK_n12,JK_n12,She had your dark suit in greasy wash water all year.
+JK_n13,JK_n18,Was she just naturally sloppy about everything but her physical appearance?
+JK_n14,JK_n30,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_n15,JK_n28,The same shelter could be built into an embankment or below ground level.
+JK_n16,JK_n18,Jeff thought you argued in favor of a centrifuge purchase.
+JK_n17,JK_n17,She had your dark suit in greasy wash water all year.
+JK_n18,JK_n18,"If Carol comes tomorrow, have her arrange for a meeting at two."
+JK_n19,JK_n29,Each untimely income loss coincided with the breakdown of a heating system part.
+JK_n20,JK_n29,The easygoing zoologist relaxed throughout the voyage.
+JK_n21,JK_n24,The fish began to leap frantically on the surface of the small lake.
+JK_n22,JK_n22,We saw eight tiny icicles below our roof.
+JK_n23,JK_n23,Don't ask me to carry an oily rag like that.
+JK_n24,JK_n24,A boring novel is a superb sleeping pill.
+JK_n25,JK_n29,Each untimely income loss coincided with the breakdown of a heating system part.
+JK_n26,JK_n30,She had your dark suit in greasy wash water all year.
+JK_n27,JK_n30,Kindergarten children decorate their classrooms for all holidays.
+JK_n28,JK_n28,"If Carol comes tomorrow, have her arrange for a meeting at two."
+JK_n29,JK_n29,How much will it cost to do any necessary modernizing and redecorating?
+JK_n30,JK_n30,Kindergarten children decorate their classrooms for all holidays.
+JK_sa01,JK_sa06,The fish began to leap frantically on the surface of the small lake.
+JK_sa02,JK_sa02,Was she just naturally sloppy about everything but her physical appearance?
+JK_sa03,JK_sa06,Was she just naturally sloppy about everything but her physical appearance?
+JK_sa04,JK_sa15,Special task forces rescue hostages from kidnappers.
+JK_sa05,JK_sa05,The sermon emphasized the need for affirmative action.
+JK_sa06,JK_sa06,Don't ask me to carry an oily rag like that.
+JK_sa07,JK_sa07,The fish began to leap frantically on the surface of the small lake.
+JK_sa08,JK_sa08,The fish began to leap frantically on the surface of the small lake.
+JK_sa09,JK_sa09,Kindergarten children decorate their classrooms for all holidays.
+JK_sa10,JK_sa10,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_sa11,JK_sa15,Jeff thought you argued in favor of a centrifuge purchase.
+JK_sa12,JK_sa12,Kindergarten children decorate their classrooms for all holidays.
+JK_sa13,JK_sa13,Jeff thought you argued in favor of a centrifuge purchase.
+JK_sa14,JK_sa14,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_sa15,JK_sa15,Don't ask me to carry an oily rag like that.
+JK_su01,JK_su03,Is a relaxed home atmosphere enough to help her outgrow these traits?
+JK_su02,JK_su02,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_su03,JK_su03,A boring novel is a superb sleeping pill.
+JK_su04,JK_su04,She had your dark suit in greasy wash water all year.
+JK_su05,JK_su12,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_su06,JK_su13,The tooth fairy forgot to come when Roger's tooth fell out.
+JK_su07,JK_su12,The sermon emphasized the need for affirmative action.
+JK_su08,JK_su12,Each untimely income loss coincided with the breakdown of a heating system part.
+JK_su09,JK_su09,Each untimely income loss coincided with the breakdown of a heating system part.
+JK_su10,JK_su10,Was she just naturally sloppy about everything but her physical appearance?
+JK_su11,JK_su11,Kindergarten children decorate their classrooms for all holidays.
+JK_su12,JK_su12,Cory and Trish played tag with beach balls for hours.
+JK_su13,JK_su13,The frightened child was gently subdued by his big brother.
+JK_su14,JK_su15,"If Carol comes tomorrow, have her arrange for a meeting at two."
+JK_su15,JK_su15,Don't ask me to carry an oily rag like that.
+KL_a01,KL_a03,The sermon emphasized the need for affirmative action.
+KL_a02,KL_a07,"If Carol comes tomorrow, have her arrange for a meeting at two."
+KL_a03,KL_a03,Special task forces rescue hostages from kidnappers.
+KL_a04,KL_a05,"If Carol comes tomorrow, have her arrange for a meeting at two."
+KL_a05,KL_a05,Each untimely income loss coincided with the breakdown of a heating system part.
+KL_a06,KL_a12,The easygoing zoologist relaxed throughout the voyage.
+KL_a07,KL_a07,The frightened child was gently subdued by his big brother.
+KL_a08,KL_a08,The sermon emphasized the need for affirmative action.
+KL_a09,KL_a14,The tooth fairy forgot to come when Roger's tooth fell out.
+KL_a10,KL_a10,A boring novel is a superb sleeping pill.
+KL_a11,KL_a11,Kindergarten children decorate their classrooms for all holidays.
+KL_a12,KL_a12,The fish began to leap frantically on the surface of the small lake.
+KL_a13,KL_a14,Was she just naturally sloppy about everything but her physical appearance?
+KL_a14,KL_a14,Special task forces rescue hostages from kidnappers.
+KL_a15,KL_a15,Was she just naturally sloppy about everything but her physical appearance?
+KL_d01,KL_d03,Military personnel are expected to obey government orders.
+KL_d02,KL_d06,The easygoing zoologist relaxed throughout the voyage.
+KL_d03,KL_d03,A boring novel is a superb sleeping pill.
+KL_d04,KL_d04,The tooth fairy forgot to come when Roger's tooth fell out.
+KL_d05,KL_d05,Each untimely income loss coincided with the breakdown of a heating system part.
+KL_d06,KL_d06,The frightened child was gently subdued by his big brother.
+KL_d07,KL_d12,Jeff thought you argued in favor of a centrifuge purchase.
+KL_d08,KL_d08,The same shelter could be built into an embankment or below ground level.
+KL_d09,KL_d09,Don't ask me to carry an oily rag like that.
+KL_d10,KL_d10,Kindergarten children decorate their classrooms for all holidays.
+KL_d11,KL_d15,Cory and Trish played tag with beach balls for hours.
+KL_d12,KL_d12,The fish began to leap frantically on the surface of the small lake.
+KL_d13,KL_d15,Military personnel are expected to obey government orders.
+KL_d14,KL_d14,The frightened child was gently subdued by his big brother.
+KL_d15,KL_d15,"If Carol comes tomorrow, have her arrange for a meeting at two."
+KL_f01,KL_f03,A boring novel is a superb sleeping pill.
+KL_f02,KL_f02,Kindergarten children decorate their classrooms for all holidays.
+KL_f03,KL_f03,Was she just naturally sloppy about everything but her physical appearance?
+KL_f04,KL_f04,Jeff thought you argued in favor of a centrifuge purchase.
+KL_f05,KL_f05,The frightened child was gently subdued by his big brother.
+KL_f06,KL_f08,Was she just naturally sloppy about everything but her physical appearance?
+KL_f07,KL_f07,Military personnel are expected to obey government orders.
+KL_f08,KL_f08,The frightened child was gently subdued by his big brother.
+KL_f09,KL_f09,Special task forces rescue hostages from kidnappers.
+KL_f10,KL_f10,Kindergarten children decorate their classrooms for all holidays.
+KL_f11,KL_f11,The sermon emphasized the need for affirmative action.
+KL_f12,KL_f15,The frightened child was gently subdued by his big brother.
+KL_f13,KL_f13,The frightened child was gently subdued by his big brother.
+KL_f14,KL_f14,Was she just naturally sloppy about everything but her physical appearance?
+KL_f15,KL_f15,Kindergarten children decorate their classrooms for all holidays.
+KL_h01,KL_h10,The frightened child was gently subdued by his big brother.
+KL_h02,KL_h02,Is a relaxed home atmosphere enough to help her outgrow these traits?
+KL_h03,KL_h10,Cory and Trish played tag with beach balls for hours.
+KL_h04,KL_h09,"If Carol comes tomorrow, have her arrange for a meeting at two."
+KL_h05,KL_h05,A boring novel is a superb sleeping pill.
+KL_h06,KL_h06,Cory and Trish played tag with beach balls for hours.
+KL_h07,KL_h07,The same shelter could be built into an embankment or below ground level.
+KL_h08,KL_h08,Was she just naturally sloppy about everything but her physical appearance?
+KL_h09,KL_h09,Military personnel are expected to obey government orders.
+KL_h10,KL_h10,Cory and Trish played tag with beach balls for hours.
+KL_h11,KL_h14,Special task forces rescue hostages from kidnappers.
+KL_h12,KL_h12,Each untimely income loss coincided with the breakdown of a heating system part.
+KL_h13,KL_h13,Call an ambulance for medical assistance.
+KL_h14,KL_h14,Cory and Trish played tag with beach balls for hours.
+KL_h15,KL_h15,Jeff thought you argued in favor of a centrifuge purchase.
+KL_n01,KL_n18,The easygoing zoologist relaxed throughout the voyage.
+KL_n02,KL_n17,Was she just naturally sloppy about everything but her physical appearance?
+KL_n03,KL_n18,A boring novel is a superb sleeping pill.
+KL_n04,KL_n28,The sermon emphasized the need for affirmative action.
+KL_n05,KL_n05,The frightened child was gently subdued by his big brother.
+KL_n06,KL_n22,The same shelter could be built into an embankment or below ground level.
+KL_n07,KL_n18,Military personnel are expected to obey government orders.
+KL_n08,KL_n08,Don't ask me to carry an oily rag like that.
+KL_n09,KL_n09,Is a relaxed home atmosphere enough to help her outgrow these traits?
+KL_n10,KL_n10,Don't ask me to carry an oily rag like that.
+KL_n11,KL_n11,Kindergarten children decorate their classrooms for all holidays.
+KL_n12,KL_n12,Each untimely income loss coincided with the breakdown of a heating system part.
+KL_n13,KL_n18,"If Carol comes tomorrow, have her arrange for a meeting at two."
+KL_n14,KL_n30,How much will it cost to do any necessary modernizing and redecorating?
+KL_n15,KL_n28,The sermon emphasized the need for affirmative action.
+KL_n16,KL_n18,Kindergarten children decorate their classrooms for all holidays.
+KL_n17,KL_n17,The same shelter could be built into an embankment or below ground level.
+KL_n18,KL_n18,Was she just naturally sloppy about everything but her physical appearance?
+KL_n19,KL_n29,Jeff thought you argued in favor of a centrifuge purchase.
+KL_n20,KL_n29,She had your dark suit in greasy wash water all year.
+KL_n21,KL_n24,Special task forces rescue hostages from kidnappers.
+KL_n22,KL_n22,Special task forces rescue hostages from kidnappers.
+KL_n23,KL_n23,She had your dark suit in greasy wash water all year.
+KL_n24,KL_n24,The tooth fairy forgot to come when Roger's tooth fell out.
+KL_n25,KL_n29,Don't ask me to carry an oily rag like that.
+KL_n26,KL_n26,Was she just naturally sloppy about everything but her physical appearance?
+KL_n27,KL_n30,Don't ask me to carry an oily rag like that.
+KL_n28,KL_n28,A boring novel is a superb sleeping pill.
+KL_n29,KL_n29,The frightened child was gently subdued by his big brother.
+KL_n30,KL_n30,Military personnel are expected to obey government orders.
+KL_sa01,KL_sa06,The sermon emphasized the need for affirmative action.
+KL_sa02,KL_sa02,The frightened child was gently subdued by his big brother.
+KL_sa03,KL_sa06,Was she just naturally sloppy about everything but her physical appearance?
+KL_sa04,KL_sa15,She had your dark suit in greasy wash water all year.
+KL_sa05,KL_sa13,Cory and Trish played tag with beach balls for hours.
+KL_sa06,KL_sa06,Each untimely income loss coincided with the breakdown of a heating system part.
+KL_sa07,KL_sa07,Each untimely income loss coincided with the breakdown of a heating system part.
+KL_sa08,KL_sa08,Call an ambulance for medical assistance.
+KL_sa09,KL_sa09,The same shelter could be built into an embankment or below ground level.
+KL_sa10,KL_sa10,Special task forces rescue hostages from kidnappers.
+KL_sa11,KL_sa15,The tooth fairy forgot to come when Roger's tooth fell out.
+KL_sa12,KL_sa12,Military personnel are expected to obey government orders.
+KL_sa13,KL_sa13,Cory and Trish played tag with beach balls for hours.
+KL_sa14,KL_sa14,The tooth fairy forgot to come when Roger's tooth fell out.
+KL_sa15,KL_sa15,The sermon emphasized the need for affirmative action.
+KL_su01,KL_su03,The frightened child was gently subdued by his big brother.
+KL_su02,KL_su02,The tooth fairy forgot to come when Roger's tooth fell out.
+KL_su03,KL_su03,The frightened child was gently subdued by his big brother.
+KL_su04,KL_su04,Special task forces rescue hostages from kidnappers.
+KL_su05,KL_su05,Jeff thought you argued in favor of a centrifuge purchase.
+KL_su06,KL_su13,How much will it cost to do any necessary modernizing and redecorating?
+KL_su07,KL_su07,Each untimely income loss coincided with the breakdown of a heating system part.
+KL_su08,KL_su12,Special task forces rescue hostages from kidnappers.
+KL_su09,KL_su09,Was she just naturally sloppy about everything but her physical appearance?
+KL_su10,KL_su10,The sermon emphasized the need for affirmative action.
+KL_su11,KL_su11,A boring novel is a superb sleeping pill.
+KL_su12,KL_su12,Special task forces rescue hostages from kidnappers.
+KL_su13,KL_su13,The fish began to leap frantically on the surface of the small lake.
+KL_su14,KL_su14,Was she just naturally sloppy about everything but her physical appearance?
+KL_su15,KL_su15,Jeff thought you argued in favor of a centrifuge purchase.
