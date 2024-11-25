@@ -8,7 +8,8 @@ from typing import Optional
 
 from sklearn.metrics.pairwise import cosine_similarity
 
-from . import LibrosaWrapper, WavLM, WavLMConfig
+from .librosa_wrapper import LibrosaWrapper
+from .wavlm import WavLM, WavLMConfig
 
 
 SAMPLING_RATE = 16_000
@@ -22,7 +23,7 @@ class ClonEval:
         self._init_wavlm()
 
     def _init_wavlm(self) -> None:
-        wavlm_checkpoint = torch.load("checkpoint/WavLM-Large.pt", weights_only=True)
+        wavlm_checkpoint = torch.load("./checkpoints/WavLM-Large.pt", weights_only=True)
         self.wavlm_config = WavLMConfig(wavlm_checkpoint["cfg"])
         self.wavlm = WavLM(self.wavlm_config).to(DEVICE)
         self.wavlm.load_state_dict(wavlm_checkpoint["model"])

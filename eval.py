@@ -17,13 +17,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--original_dir", 
         type=str,
-        default="example/original_samples",
+        default="data/original_samples",
         help="Full path to the directory with original samples."
     )
     parser.add_argument(
         "--cloned_dir", 
         type=str,
-        default="example/cloned_samples",
+        default="data/cloned_samples",
         help="Full path to the directory with cloned samples."
     )
     parser.add_argument(
