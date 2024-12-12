@@ -3,14 +3,13 @@ import os
 from librosa import load
 from datasets import Dataset
 import numpy as np
-
+import librosa
 from typing import Optional
 
 from sklearn.metrics.pairwise import cosine_similarity
 
 from .librosa_wrapper import LibrosaWrapper
 from .wavlm import WavLM, WavLMConfig
-
 
 SAMPLING_RATE = 16_000
 
@@ -63,10 +62,18 @@ class ClonEval:
         elif len(orig_waveform) > len(clon_waveform):
             orig_waveform = orig_waveform[:len(clon_waveform)]
 
+        results = {}
+
+        specgram_to_check = np.abs(librosa.stft(y=orig_waveform, hop_length=512, n_fft=2048))
+        if specgram_to_check.shape[1] < 9:
+            feature_list = self.librosa_wrapper.get_feature_list()
+            for feature in feature_list:
+                results[feature] = 0
+            results["wavlm"] = 0
+            return results
+
         orig_features = self.librosa_wrapper(waveform=orig_waveform, sampling_rate=SAMPLING_RATE)
         clon_features = self.librosa_wrapper(waveform=clon_waveform, sampling_rate=SAMPLING_RATE)
-
-        results = {}
 
         for feature in orig_features:
             orig_f = self._normalize_features(orig_features[feature])
@@ -95,10 +102,14 @@ class ClonEval:
                 res = {"emotion": emotion}
                 res.update({feature: np.mean(emo_results[feature]).item() for feature in emo_results.column_names if feature not in {"emotion", "filename"}})
                 aggregated_results.append(res)
+            res = {"emotion": 'all'}
+            res.update({feature: np.mean(results[feature]).item() for feature in results.column_names if feature not in {"emotion", "filename"}})
+            aggregated_results.append(res)
             aggregated_results = Dataset.from_list(aggregated_results)
         else:
             aggregated_results = Dataset.from_dict({
-                feature: [np.mean(results[feature]).item()] for feature in results.column_names if feature not in {"emotion", "filename"}
+                "emotion": ['all'],
+                **{feature: [np.mean(results[feature]).item()] for feature in results.column_names if feature not in {"emotion", "filename"}}
             })
         results.to_csv("./results.csv")
         aggregated_results.to_csv("./aggregated_results.csv")

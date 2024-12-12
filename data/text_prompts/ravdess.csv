@@ -1,4 +1,4 @@
-file_id_sample_to_clone,file_id_sample_to_compare,text
+id_sample_to_clone,id_sample_to_compare,text
 03-01-01-01-01-01-01,03-01-01-01-01-02-01,Dogs are sitting by the door
 03-01-01-01-01-01-02,03-01-01-01-01-02-02,Dogs are sitting by the door
 03-01-01-01-01-01-03,03-01-01-01-01-02-03,Dogs are sitting by the door

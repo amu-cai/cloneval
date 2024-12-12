@@ -1,4 +1,4 @@
-file_id_sample_to_clone,file_id_sample_to_compare,text
+id_sample_to_clone,id_sample_to_compare,text
 tess_OAF_anger_back,tess_OAF_anger_back,Say the word jail.
 tess_OAF_anger_bar,tess_OAF_anger_bar,Say the word mop.
 tess_OAF_anger_base,tess_OAF_anger_base,Say the word came.

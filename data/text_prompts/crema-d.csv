@@ -1,4 +1,4 @@
-file_id_sample_to_clone,file_id_sample_to_compare,text
+id_sample_to_clone,id_sample_to_compare,text
 crema-d_1001_anger_DFAXX,crema-d_1001_anger_DFAXX,The airplane is almost full.
 crema-d_1001_anger_IEOHI,crema-d_1001_anger_IEOMD,The surface is slick.
 crema-d_1001_anger_IEOLO,crema-d_1001_anger_IEOMD,We'll stop in a couple of minutes.

@@ -5,7 +5,6 @@ import torch
 import librosa
 import scipy
 
-
 class LibrosaWrapper:
     """
     A wrapper class to apply various Librosa transformations to audio data.
@@ -89,3 +88,35 @@ class LibrosaWrapper:
             'variable_Q_transform': librosa.amplitude_to_db(np.abs(librosa.vqt(y=waveform, sr=self.sampling_rate, hop_length=self.hop_length)), ref=np.max),
             'const_Q_chromagram': librosa.feature.chroma_cqt(y=waveform, sr=self.sampling_rate),
         }
+    
+
+    def get_feature_list(self):
+        feature_list = [
+        'pitch',
+        'spectrogram',
+        'spectrogram_delta1',
+        'mel_spectrogram',
+        'mel_spectrogram_delta1',
+        'mfcc',
+        'mfcc_delta1',
+        'mfcc_delta2',
+        'rms',
+        'spectral_centroid',
+        'spectral_bandwidth',
+        'spectral_contrast',
+        'spectral_flatness',
+        'spectral_rollof',
+        'zero_crossing_rate',
+        'static_tempo',
+        'static_tempo_uniform',
+        'dynamic_tempo',
+        'dynamic_tempo_lognorm',
+        'linear_prediction_coefficients',
+        'tempogram',
+        'chromagram',
+        'pseudo_const_Q_transform',
+        'iirt',
+        'variable_Q_transform',
+        'const_Q_chromagram']
+
+        return feature_list
