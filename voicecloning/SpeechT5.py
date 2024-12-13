@@ -59,20 +59,18 @@ class VoiceCloner:
         self._clone = self._clone_speecht5
 
 
-    """
-    ===================================================================
-    Loads a dataset from Hugging Face and removes unnecessary columns.
-
-    Args:
-        dataset_name (str): Name of the Hugging Face dataset.
-        split_name (str): Split name of the dataset.
-        cache_dir (str): Path to the cache directory.
-
-    Returns:
-        Dataset: A dataset with only the relevant columns.
-    ===================================================================
-    """
     def _load_dataset(self, dataset_name: str, split_name: str, cache_dir: str) -> Dataset:
+        """
+        Loads a dataset from Hugging Face and removes unnecessary columns.
+
+        Args:
+            dataset_name (str): Name of the Hugging Face dataset.
+            split_name (str): Split name of the dataset.
+            cache_dir (str): Path to the cache directory.
+
+        Returns:
+            Dataset: A dataset with only the relevant columns.
+        """
         logger.info(f'Loading {split_name} split of {dataset_name} dataset')
         dataset = load_dataset(dataset_name, split=split_name, cache_dir=cache_dir, trust_remote_code=True)
         
