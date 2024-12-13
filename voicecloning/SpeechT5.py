@@ -197,7 +197,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset_name', type=str, default='openslr/librispeech_asr')
     parser.add_argument('--split_name', type=str, default='test.clean')
-    parser.add_argument('--cache_dir', type=str, default='/projects/csi_huggingface/cache')
+    parser.add_argument('--cache_dir', type=str, default=None)
     parser.add_argument('--audio_column', type=str, default='audio')
     parser.add_argument('--text_column', type=str, default='text')
     parser.add_argument('--speaker_column', type=str, default='speaker_id')
