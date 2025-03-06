@@ -1,15 +1,14 @@
 import torch
 import os
-from librosa import load
 from datasets import Dataset
 import numpy as np
 import librosa
-from typing import Optional
 
 from sklearn.metrics.pairwise import cosine_similarity
 
 from .librosa_wrapper import LibrosaWrapper
 from .wavlm import WavLM, WavLMConfig
+
 
 SAMPLING_RATE = 16_000
 
@@ -28,7 +27,7 @@ class ClonEval:
         self.wavlm.load_state_dict(wavlm_checkpoint["model"])
 
     def _read_audio(self, pth: str) -> np.ndarray:
-        waveform, _ = load(pth, sr=SAMPLING_RATE)
+        waveform, _ = librosa.load(pth, sr=SAMPLING_RATE)
         return waveform
     
     def _normalize_features(self, features: np.ndarray) -> np.ndarray:
