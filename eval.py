@@ -15,12 +15,14 @@ logger = logging.getLogger(__name__)
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "-o",
         "--original_dir", 
         type=str,
         default="data/original_samples",
         help="Full path to the directory with original samples."
     )
     parser.add_argument(
+        "-c",
         "--cloned_dir", 
         type=str,
         default="data/cloned_samples",
@@ -56,8 +58,8 @@ def main():
 
     cloneval = ClonEval()
     cloneval.evaluate(
-        orig_dir=args.original_dir,
-        clon_dir=args.cloned_dir,
+        original_dir=args.original_dir,
+        cloned_dir=args.cloned_dir,
         use_emotion=args.use_emotion,
     )
 

@@ -1,114 +1,135 @@
-import torch
 import os
-from datasets import Dataset
+import torch
 import numpy as np
 import librosa
-
+from tqdm import tqdm
+from datasets import Dataset
 from sklearn.metrics.pairwise import cosine_similarity
+from transformers import WavLMForXVector, AutoFeatureExtractor
 
 from .librosa_wrapper import LibrosaWrapper
-from .wavlm import WavLM, WavLMConfig
 
 
 SAMPLING_RATE = 16_000
-
 DEVICE = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
 
 
 class ClonEval:
     def __init__(self) -> None:
         self.librosa_wrapper = LibrosaWrapper(sampling_rate=SAMPLING_RATE)
+        self.feature_list = None
         self._init_wavlm()
 
     def _init_wavlm(self) -> None:
-        wavlm_checkpoint = torch.load("./checkpoints/WavLM-Large.pt", weights_only=True)
-        self.wavlm_config = WavLMConfig(wavlm_checkpoint["cfg"])
-        self.wavlm = WavLM(self.wavlm_config).to(DEVICE)
-        self.wavlm.load_state_dict(wavlm_checkpoint["model"])
+        """Load pretrained WavLM model for speaker embedding extraction."""
+        self.wavlm = WavLMForXVector.from_pretrained("microsoft/wavlm-base-plus-sv").to(DEVICE).eval()
+        self.feature_extractor = AutoFeatureExtractor.from_pretrained("microsoft/wavlm-base-plus-sv")
 
-    def _read_audio(self, pth: str) -> np.ndarray:
-        waveform, _ = librosa.load(pth, sr=SAMPLING_RATE)
+    def _read_audio(self, path: str) -> np.ndarray:
+        """Read and resample audio to target sampling rate."""
+        waveform, _ = librosa.load(path, sr=SAMPLING_RATE)
         return waveform
     
     def _normalize_features(self, features: np.ndarray) -> np.ndarray:
+        """Normalize feature array, handling NaNs and reshaping."""
         features = np.nan_to_num(features)
-        if features.ndim < 2:
-            features = features.reshape(1, -1)
-        return features
+        return features.reshape(1, -1) if features.ndim < 2 else features
     
-    def _calc_cossim(self, orig_features: np.ndarray, clon_features: np.ndarray) -> float:
-        orig_features, clon_features = self._normalize_features(orig_features), self._normalize_features(clon_features)
-        cossim = np.mean(cosine_similarity(orig_features, clon_features)).item()
-        return cossim
+    def _calc_cossim(self, o: np.ndarray, c: np.ndarray) -> float:
+        """Compute cosine similarity between two feature vectors."""
+        o, c = self._normalize_features(o), self._normalize_features(c)
+        return np.mean(cosine_similarity(o, c)).item()
     
     def _get_speaker_embeds(self, x: np.ndarray) -> torch.Tensor:
-        x = torch.tensor(x, dtype=torch.float32).view(1, -1).to(DEVICE)
-        if self.wavlm_config.normalize:
-            x = torch.nn.functional.layer_norm(x, x.shape)
-        speaker_embeds, _ = self.wavlm.extract_features(
-            x, 
-            output_layer=self.wavlm.cfg.encoder_layers, 
-            ret_layer_results=True,
-        )[0]
-        speaker_embeds = speaker_embeds.squeeze(0).detach().cpu().numpy()
-        return speaker_embeds
+        """Extract speaker embedding from a waveform using WavLM."""
+        inputs = self.feature_extractor(x, sampling_rate=SAMPLING_RATE, return_tensors="pt").to(DEVICE)
+        with torch.no_grad():
+            outputs = self.wavlm(**inputs)        
+        return outputs.embeddings.squeeze().cpu().numpy()
 
-    def eval_sample(self, orig_pth: str, clon_pth: str):
-        orig_waveform, clon_waveform = self._read_audio(orig_pth), self._read_audio(clon_pth)
+    def eval_sample(self, original_path: str, cloned_path: str):
+        """
+        Evaluate similarity between an original and cloned audio sample.
+        Returns a dictionary of cosine similarities per feature.
+        """
+        original_waveform = self._read_audio(original_path)
+        cloned_waveform = self._read_audio(cloned_path)
 
-        if len(orig_waveform) < len(clon_waveform):
-            clon_waveform = clon_waveform[:len(orig_waveform)]
-        elif len(orig_waveform) > len(clon_waveform):
-            orig_waveform = orig_waveform[:len(clon_waveform)]
+        min_len = min(len(original_waveform), len(cloned_waveform))
+        original_waveform = original_waveform[:min_len]
+        cloned_waveform = cloned_waveform[:min_len]
 
-        results = {}
+        if np.abs(librosa.stft(original_waveform)).shape[1] < 9:
+            if self.feature_list is None:
+                return {}
+            return {f: 0.0 for f in self.feature_list + ["wavlm"]}
 
-        specgram_to_check = np.abs(librosa.stft(y=orig_waveform, hop_length=512, n_fft=2048))
-        if specgram_to_check.shape[1] < 9:
-            feature_list = self.librosa_wrapper.get_feature_list()
-            for feature in feature_list:
-                results[feature] = 0
-            results["wavlm"] = 0
-            return results
+        original_features = self.librosa_wrapper(waveform=original_waveform, sampling_rate=SAMPLING_RATE)
+        cloned_features = self.librosa_wrapper(waveform=cloned_waveform, sampling_rate=SAMPLING_RATE)
 
-        orig_features = self.librosa_wrapper(waveform=orig_waveform, sampling_rate=SAMPLING_RATE)
-        clon_features = self.librosa_wrapper(waveform=clon_waveform, sampling_rate=SAMPLING_RATE)
+        if self.feature_list is None:
+            self.feature_list = list(original_features.keys())
 
-        for feature in orig_features:
-            orig_f = self._normalize_features(orig_features[feature])
-            clon_f = self._normalize_features(clon_features[feature])
-            cossim = self._calc_cossim(orig_f, clon_f)
-            results[feature] = cossim
+        results = {
+            feature: self._calc_cossim(original_features[feature], cloned_features[feature])
+            for feature in self.feature_list
+        }
 
         results["wavlm"] = self._calc_cossim(
-            orig_features=self._get_speaker_embeds(orig_waveform),
-            clon_features=self._get_speaker_embeds(clon_waveform),
+            self._get_speaker_embeds(original_waveform),
+            self._get_speaker_embeds(cloned_waveform),
         )
 
         return results
 
-    def evaluate(self, orig_dir: str, clon_dir: str, use_emotion: bool = False) -> None:
-        filenames = os.listdir(orig_dir)
-        results = Dataset.from_dict({"filename": filenames})
+    def evaluate(self, original_dir: str, cloned_dir: str, use_emotion: bool = False) -> None:
+        """
+        Evaluate all audio files in `original_dir` and `cloned_dir`, comparing original and cloned samples.
+        Saves full and aggregated results as CSV files.
+        """
+        filenames = sorted(os.listdir(original_dir))
+        all_results = []
+        for filename in tqdm(filenames, desc="Evaluating"):
+            original_path = os.path.join(original_dir, filename)
+            cloned_path = os.path.join(cloned_dir, filename)
+
+            result = {"filename": filename}
+            features = self.eval_sample(original_path, cloned_path)
+            if not features:
+                continue
+
+            result.update(features)
+
+            if use_emotion:
+                result["emotion"] = filename.replace(".wav", "").split("_")[-1]
+            
+            all_results.append(result)
+        
+        results_ds = Dataset.from_list(all_results)
+        results_ds.to_csv("results.csv")
+
         if use_emotion:
-            results = results.map(lambda x: {"emotion": x["filename"].replace(".wav", "").split("_")[-1]})
-        results = results.map(lambda x: self.eval_sample(orig_pth=f"{orig_dir}/{x['filename']}", clon_pth=f"{clon_dir}/{x['filename']}"))
-        if use_emotion:
-            emotions = set(results["emotion"])
-            aggregated_results = []
+            emotions = set(results_ds["emotion"])
+            aggregated = []
+
             for emotion in emotions:
-                emo_results = results.filter(lambda x: x["emotion"] == emotion)
-                res = {"emotion": emotion}
-                res.update({feature: np.mean(emo_results[feature]).item() for feature in emo_results.column_names if feature not in {"emotion", "filename"}})
-                aggregated_results.append(res)
-            res = {"emotion": 'all'}
-            res.update({feature: np.mean(results[feature]).item() for feature in results.column_names if feature not in {"emotion", "filename"}})
-            aggregated_results.append(res)
-            aggregated_results = Dataset.from_list(aggregated_results)
+                filtered = results_ds.filter(lambda x: x["emotion"] == emotion)
+                avg = {
+                    k: np.mean(filtered[k]) if k not in {"filename", "emotion"} else emotion
+                    for k in results_ds.column_names if k != "filename"
+                }
+                aggregated.append(avg)
+            
+            avg_all = {
+                k: np.mean(results_ds[k]) if k not in {"filename", "emotion"} else "all"
+                for k in results_ds.column_names if k != "filename"
+            }
+            aggregated.append(avg_all)
+
+            Dataset.from_list(aggregated).to_csv("aggregated_results.csv")
         else:
-            aggregated_results = Dataset.from_dict({
-                "emotion": ['all'],
-                **{feature: [np.mean(results[feature]).item()] for feature in results.column_names if feature not in {"emotion", "filename"}}
-            })
-        results.to_csv("./results.csv")
-        aggregated_results.to_csv("./aggregated_results.csv")
+            avg = {
+                k: [np.mean(results_ds[k])] for k in results_ds.column_names if k != "filename"
+            }
+            avg["emotion"] = ["all"]
+            Dataset.from_dict(avg).to_csv("aggregated_results.csv")
