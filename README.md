@@ -14,15 +14,7 @@ cd cloneval
 # Install required packages
 pip install -r requirements.txt
 
-# Create ./checkpoints/ directory
-mkdir checkpoints
-```
-
-Download **WavLM Large** checkpoint from [here](https://github.com/microsoft/unilm/tree/master/wavlm) and save it as `./checkpoints/WavLM-Large.pt`.
-
-Run our example:
-
-```bash
+# Run our example
 python eval.py                   # Without aggregation per emotional state
 python eval.py --use_emotion     # With aggregation per emotional state
 ```
@@ -37,15 +29,7 @@ python eval.py --use_emotion     # With aggregation per emotional state
    pip install -r requirements.txt
    ```
 
-2. Ensure there is a directory named `checkpoints` in the project root. If it doesn't exist, create it:
-
-   ```bash
-   mkdir checkpoints
-   ```
-
-3. Download the required **WavLM Large** checkpoint from [here](https://github.com/microsoft/unilm/tree/master/wavlm) and save it as `WavLM-Large.pt` in the `checkpoints` directory.
-
-4. Organize the input files into two folders -- one with original samples, and one with cloned ones. Each folder should contain corresponding files with the same filenames for proper comparison. If you want to consider emotional states in the evaluation, make sure that each filename contains name of the relevant emotion after `_`.
+2. Organize the input files into two folders -- one with original samples, and one with cloned ones. Each folder should contain corresponding files with the same filenames for proper comparison. If you want to consider emotional states in the evaluation, make sure that each filename contains name of the relevant emotion after `_`.
 
    For example:
 
@@ -61,18 +45,18 @@ python eval.py --use_emotion     # With aggregation per emotional state
    └── sample_3_neutral.wav
    ```
 
-5. Run the `eval.py` script with the following command:
+3. Run the `eval.py` script with the following command:
 
    ```bash
-   python eval.py --original_dir <dir_with_original_samples> --cloned_dir <dir_with_cloned_samples>
+   python eval.py --original_dir <dir_with_original_samples> --cloned_dir <dir_with_cloned_samples> --output_dir <dir_to_save_results>
    ```
 
-   Replace `<dir_with_original_samples>` and `<dir_with_cloned_samples>` with the paths to your directories. If you want to consider emotions in the evaluation and aggregate the results per emotional state, add the `--use_emotion` flag:
+   Replace `<dir_with_original_samples>`, `<dir_with_cloned_samples>` and `<dir_to_save_results>` with the paths to your directories. If you want to consider emotions in the evaluation and aggregate the results per emotional state, add the `--use_emotion` flag:
 
    ```bash
-   python eval.py --original_dir <dir_with_original_samples> --cloned_dir <dir_with_cloned_samples> --use_emotion
+   python eval.py --original_dir <dir_with_original_samples> --cloned_dir <dir_with_cloned_samples> --output_dir <dir_to_save_results> --use_emotion
    ```
 
-6. The script generates two output files in the current directory:
+4. The script generates two output files in the current directory:
    - `results.csv` - detailed metrics for each file pair.
    - `aggregated_results.csv` - averaged results for the dataset (per emotion or not).
