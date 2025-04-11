@@ -57,6 +57,6 @@ python eval.py --use_emotion     # With aggregation per emotional state
    python eval.py --original_dir <dir_with_original_samples> --cloned_dir <dir_with_cloned_samples> --output_dir <dir_to_save_results> --use_emotion
    ```
 
-4. The script generates two output files in the current directory:
+4. The script generates two output files in the specified directory:
    - `results.csv` - detailed metrics for each file pair.
    - `aggregated_results.csv` - averaged results for the dataset (per emotion or not).
