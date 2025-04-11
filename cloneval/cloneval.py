@@ -11,7 +11,13 @@ from .librosa_wrapper import LibrosaWrapper
 
 
 SAMPLING_RATE = 16_000
-DEVICE = torch.device('cuda:0') if torch.cuda.is_available() else torch.device('cpu')
+
+if torch.cuda.is_available():
+    DEVICE = torch.device("cuda")
+elif getattr(torch.backends, "mps", None) and torch.backends.mps.is_available():
+    DEVICE = torch.device("mps")
+else:
+    DEVICE = torch.device("cpu")
 
 
 class ClonEval:
@@ -82,7 +88,7 @@ class ClonEval:
 
         return results
 
-    def evaluate(self, original_dir: str, cloned_dir: str, use_emotion: bool = False) -> None:
+    def evaluate(self, original_dir: str, cloned_dir: str, use_emotion: bool = False, output_dir: str = ".") -> None:
         """
         Evaluate all audio files in `original_dir` and `cloned_dir`, comparing original and cloned samples.
         Saves full and aggregated results as CSV files.
@@ -126,10 +132,10 @@ class ClonEval:
             }
             aggregated.append(avg_all)
 
-            Dataset.from_list(aggregated).to_csv("aggregated_results.csv")
+            Dataset.from_list(aggregated).to_csv(f"{output_dir}/aggregated_results.csv")
         else:
             avg = {
                 k: [np.mean(results_ds[k])] for k in results_ds.column_names if k != "filename"
             }
             avg["emotion"] = ["all"]
-            Dataset.from_dict(avg).to_csv("aggregated_results.csv")
+            Dataset.from_dict(avg).to_csv(f"{output_dir}/aggregated_results.csv")
