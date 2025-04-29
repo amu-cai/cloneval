@@ -88,10 +88,16 @@ class ClonEval:
 
         return results
 
-    def evaluate(self, original_dir: str, cloned_dir: str, use_emotion: bool = False, output_dir: str = ".") -> None:
+    def evaluate(
+        self, 
+        original_dir: str, 
+        cloned_dir: str, 
+        evaluate_emotion_transfer: bool = False, 
+        output_dir: str = ".",
+    ) -> None:
         """
-        Evaluate all audio files in `original_dir` and `cloned_dir`, comparing original and cloned samples.
-        Saves full and aggregated results as CSV files.
+        Evaluate all audio files in `original_dir` and `cloned_dir`, comparing original and cloned
+        samples. Saves full and aggregated results as CSV files.
         """
         filenames = sorted(os.listdir(original_dir))
         all_results = []
@@ -106,7 +112,7 @@ class ClonEval:
 
             result.update(features)
 
-            if use_emotion:
+            if evaluate_emotion_transfer:
                 result["emotion"] = filename.replace(".wav", "").split("_")[-1]
             
             all_results.append(result)
@@ -114,7 +120,7 @@ class ClonEval:
         results_ds = Dataset.from_list(all_results)
         results_ds.to_csv("results.csv")
 
-        if use_emotion:
+        if evaluate_emotion_transfer:
             emotions = set(results_ds["emotion"])
             aggregated = []
 

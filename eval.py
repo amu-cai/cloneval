@@ -29,7 +29,8 @@ def parse_args() -> argparse.Namespace:
         help="Full path to the directory with cloned samples"
     )
     parser.add_argument(
-        "--use_emotion", 
+        "-e",
+        "--evaluate_emotion_transfer`", 
         action="store_true",
         help="Whether to aggregate results per emotion"
     )
@@ -66,7 +67,7 @@ def main():
     cloneval.evaluate(
         original_dir=args.original_dir,
         cloned_dir=args.cloned_dir,
-        use_emotion=args.use_emotion,
+        evaluate_emotion_transfer=args.evaluate_emotion_transfer,
         output_dir=args.output_dir,
     )
 
