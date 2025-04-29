@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 # Run our example
 python eval.py                   # Without aggregation per emotional state
-python eval.py --use_emotion     # With aggregation per emotional state
+python eval.py --evaluate_emotion_transfer     # With aggregation per emotional state
 ```
 
 ## Usage
@@ -51,10 +51,10 @@ python eval.py --use_emotion     # With aggregation per emotional state
    python eval.py --original_dir <dir_with_original_samples> --cloned_dir <dir_with_cloned_samples> --output_dir <dir_to_save_results>
    ```
 
-   Replace `<dir_with_original_samples>`, `<dir_with_cloned_samples>` and `<dir_to_save_results>` with the paths to your directories. If you want to consider emotions in the evaluation and aggregate the results per emotional state, add the `--use_emotion` flag:
+   Replace `<dir_with_original_samples>`, `<dir_with_cloned_samples>` and `<dir_to_save_results>` with the paths to your directories. If you want to consider emotions in the evaluation and aggregate the results per emotional state, add the `--evaluate_emotion_transfer` flag:
 
    ```bash
-   python eval.py --original_dir <dir_with_original_samples> --cloned_dir <dir_with_cloned_samples> --output_dir <dir_to_save_results> --use_emotion
+   python eval.py --original_dir <dir_with_original_samples> --cloned_dir <dir_with_cloned_samples> --output_dir <dir_to_save_results> --evaluate_emotion_transfer
    ```
 
 4. The script generates two output files in the specified directory:
