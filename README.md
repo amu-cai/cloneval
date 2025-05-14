@@ -63,7 +63,7 @@ python eval.py --evaluate_emotion_transfer     # With aggregation per emotional 
 
 ## Citation Information
 
-You can access the ClonEval paper at arXiv. Please cite the paper when referencing the benchmark as:
+You can access the ClonEval paper at arXiv. Please cite the paper when referencing the benchmark, along with the used datasets.
 
 ```
 @misc{christop2025clonevalopenvoicecloning,
@@ -74,6 +74,63 @@ You can access the ClonEval paper at arXiv. Please cite the paper when referenci
       archivePrefix={arXiv},
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2504.20581}, 
+}
+
+@article{crema-d,
+    author={Cao, Houwei and Cooper, David G. and Keutmann, Michael K. and Gur, Ruben C. and Nenkova, Ani and Verma, Ragini},
+    journal={IEEE Transactions on Affective Computing},
+    title={{CREMA-D: Crowd-Sourced Emotional Multimodal Actors Dataset}},
+    year={2014},
+    volume={5},
+    number={4},
+    pages={377--390},
+    doi={10.1109/TAFFC.2014.2336244},
+}
+
+@inproceedings{librispeech2015,
+    author={Panayotov, Vassil and Chen, Guoguo and Povey, Daniel and Khudanpur, Sanjeev},
+    booktitle={2015 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+    title={{Librispeech: An ASR corpus based on public domain audio books}}, 
+    year={2015},
+    pages={5206-5210},
+    keywords={Resource description framework;Genomics;Bioinformatics;Blogs;Information services;Electronic publishing;Speech Recognition;Corpus;LibriVox},
+    doi={10.1109/ICASSP.2015.7178964}
+}
+
+@article{ravdess,
+    doi={10.1371/journal.pone.0196391},
+    author={Livingstone, Steven R. AND Russo, Frank A.},
+    journal={PLOS ONE},
+    publisher={Public Library of Science},
+    title={{The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS): A dynamic, multimodal set of facial and vocal expressions in North American English}}",
+    year={2018},
+    month=may,
+    volume={13},
+    URL={https://doi.org/10.1371/journal.pone.0196391},
+    pages={1--35},
+    number={5},
+}
+
+@inbook{savee,
+    author={Haq, S. and Jackson, P. J. B.},
+    booktitle={{Machine Audition: Principles, Algorithms and Systems}},
+    title={{Multimodal Emotion Recognition}},
+    publisher={IGI Global},
+    address={Hershey PA},
+    year={2010},
+    month=aug,
+    editor={Wang, W.},
+    pages={398--423},
+}
+
+@misc{tess,
+    author={Pichora-Fuller, M. Kathleen and Dupuis, Kate},
+    publisher={Borealis},
+    title={{Toronto emotional speech set (TESS)}},
+    year={2020},
+    version={DRAFT VERSION},
+    doi={10.5683/SP2/E8H2MF},
+    URL={https://doi.org/10.5683/SP2/E8H2MF},
 }
 ```
 
