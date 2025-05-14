@@ -60,6 +60,14 @@ python eval.py --evaluate_emotion_transfer     # With aggregation per emotional 
 4. The script generates two output files in the specified directory:
    - `results.csv` - detailed metrics for each file pair.
    - `aggregated_results.csv` - averaged results for the dataset (per emotion or not).
+  
+## Datasets
+
+- [CREMA-D](https://github.com/CheyneyComputerScience/CREMA-D)
+- [LibriSpeech](https://huggingface.co/datasets/openslr/librispeech_asr)
+- [RAVDESS](https://zenodo.org/records/1188976)
+- [SAVEE](https://www.kaggle.com/datasets/barelydedicated/savee-database)
+- [TESS](https://utoronto.scholaris.ca/collections/036db644-9790-4ed0-90cc-be1dfb8a4b66)
 
 ## Citation Information
 
