@@ -60,3 +60,20 @@ python eval.py --evaluate_emotion_transfer     # With aggregation per emotional 
 4. The script generates two output files in the specified directory:
    - `results.csv` - detailed metrics for each file pair.
    - `aggregated_results.csv` - averaged results for the dataset (per emotion or not).
+
+## Citation Information
+
+You can access the ClonEval paper at arXiv. Please cite the paper when referencing the benchmark as:
+
+```
+@misc{christop2025clonevalopenvoicecloning,
+      title={ClonEval: An Open Voice Cloning Benchmark}, 
+      author={Iwona Christop and Tomasz Kuczyński and Marek Kubis},
+      year={2025},
+      eprint={2504.20581},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2504.20581}, 
+}
+```
+
